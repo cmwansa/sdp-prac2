@@ -10,6 +10,40 @@ import java.util.*;
 import org.junit.jupiter.api.Test;
 
 class AppTest {
+  
+    //TASK 5 TESTS
+    // Test when the list is sorted in ascending order
+    @Test
+    public void testTask5_sortedList() {
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+        boolean result = SimpleFunctions.Task5(sortedList);
+        assertTrue(result);
+    }
+
+    // Test when the list is NOT sorted
+    @Test
+    public void testTask5_unsortedList() {
+        List<Integer> unsortedList = Arrays.asList(5, 3, 2, 4);
+        boolean result = SimpleFunctions.Task5(unsortedList);
+        assertFalse(result);
+    }
+
+    // Test when the list is empty (should be considered sorted)
+    @Test
+    public void testTask5_emptyList() {
+        List<Integer> emptyList = new ArrayList<>();
+        boolean result = SimpleFunctions.Task5(emptyList);
+        assertTrue(result);
+    }
+
+    // Test when the list has all identical elements (should be considered sorted)
+    @Test
+    public void testTask5_identicalElements() {
+        List<Integer> identicalList = Arrays.asList(5, 5, 5, 5);
+        boolean result = SimpleFunctions.Task5(identicalList);
+        assertTrue(result);
+    }//TASK 5 TESTS
+  
     @Test void TestingTask6 () {
         // Arrange
         SimpleFunctions testcases = new SimpleFunctions();
@@ -29,5 +63,7 @@ class AppTest {
         assertIterableEquals(expected, result);
         assertIterableEquals(expected1, result1);
         assertIterableEquals(expected2, result2);
+//>>>>>>> master
     }
 }
+
