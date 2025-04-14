@@ -19,8 +19,35 @@ public class SimpleFunctions {
             }
 
         }return result;
-
     }
+
+
+    //Task3
+    public static boolean Task3(String text){
+        boolean check = false; //check variable for if the string has a matching set of brackets or not
+        int count = 0; //counts the number of brackets. must be 0 to indicate a balance in opening and closing brackets.
+
+        for (int x = 0; x < text.length();x++){
+            if (text.charAt(x) == '('){
+                count++;
+                check = true;
+            } else{
+                if (text.charAt(x) == ')'){
+                    count--;
+                    check = true;
+
+                    if (count < 0){ //if count is negative, then there is an unmatched closing bracket 
+                        return false;
+                    } 
+                }
+            }
+        }
+
+       
+        return (check == true && count == 0);   //indicates that a string has brackets AND that they are matched
+    }
+
+
     public static <T extends Comparable<T>> boolean Task5 (List<T> lst) {
         // A loop that will iterate through the list
         for (int i =0; i < lst.size() - 1; i++) {
