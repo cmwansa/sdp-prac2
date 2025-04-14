@@ -1,6 +1,6 @@
 package sdp.prac2;
-import java.lang.Comparable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleFunctions {
     // public SimpleFunctions() {}
@@ -15,5 +15,25 @@ public class SimpleFunctions {
         }
         // if the list is sorted, it will return true
         return true;
+    }
+    public static List<Integer> Task6(List<Integer> numbers) {
+        // Create a new list to store the rounded numbers
+        List<Integer> roundedNumbers = new ArrayList<>();
+
+        // Iterate through each number in the input list
+        for (Integer num : numbers) {
+            // Check if the number is already a multiple of 100
+            if (num % 100 == 0) {
+                // If yes, add it directly to the new list
+                roundedNumbers.add(num);
+            } else {
+                // Otherwise, round it up to the next multiple of 100
+                int rounded = ((num / 100) + 1) * 100;
+                roundedNumbers.add(rounded);
+            }
+        }
+
+        // Return the new list
+        return roundedNumbers;
     }
 }
