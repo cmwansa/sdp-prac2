@@ -3,8 +3,31 @@
  */
 package sdp.prac2;
 
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+
+import java.util.*;
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+    @Test void TestingTask6 () {
+        // Arrange
+        SimpleFunctions testcases = new SimpleFunctions();
+        
+        List<Integer> data = Arrays.asList(100, 200, 300);
+        List<Integer> data1 = Arrays.asList(120, 250, 305);
+        List<Integer> data2 = Arrays.asList(990, 1000, 1010);
+
+        List<Integer> expected = Arrays.asList(100, 200, 300);
+        List<Integer> expected1 = Arrays.asList(200, 300, 400);
+        List<Integer> expected2 = Arrays.asList(1000, 1000, 1100);
+        // Act
+        List<Integer> result = testcases.Task6(data);
+        List<Integer> result1 = testcases.Task6(data1);
+        List<Integer> result2 = testcases.Task6(data2);
+        // Assert
+        assertIterableEquals(expected, result);
+        assertIterableEquals(expected1, result1);
+        assertIterableEquals(expected2, result2);
+    }
 }
