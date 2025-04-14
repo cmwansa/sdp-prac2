@@ -3,49 +3,67 @@
  */
 package sdp.prac2;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+
 import java.util.*;
 
-class AppTest {
+import org.junit.jupiter.api.Test;
 
+class AppTest {
+  
+    //TASK 5 TESTS
     // Test when the list is sorted in ascending order
     @Test
     public void testTask5_sortedList() {
-        
-        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5); //Create a sorted list;    
-        boolean result = SimpleFunctions.Task5(sortedList); //Call Task5 with the sorted list
-
-        assertTrue(result); //Check if list is sorted
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+        boolean result = SimpleFunctions.Task5(sortedList);
+        assertTrue(result);
     }
 
     // Test when the list is NOT sorted
     @Test
     public void testTask5_unsortedList() {
-        
-        List<Integer> unsortedList = Arrays.asList(5, 3, 2, 4); //Create an unsorted list 
-        boolean result = SimpleFunctions.Task5(unsortedList);   //Call Task5 with the unsorted list
-
-        assertFalse(result); //Check that the list is not sorted 
+        List<Integer> unsortedList = Arrays.asList(5, 3, 2, 4);
+        boolean result = SimpleFunctions.Task5(unsortedList);
+        assertFalse(result);
     }
 
     // Test when the list is empty (should be considered sorted)
     @Test
     public void testTask5_emptyList() {
-        
-        List<Integer> emptyList = new ArrayList<>(); //Create empty list
-        boolean result = SimpleFunctions.Task5(emptyList);  //Call Task5 with the empty list
-
-        assertTrue(result); //Check that the empty list is "sorted"
+        List<Integer> emptyList = new ArrayList<>();
+        boolean result = SimpleFunctions.Task5(emptyList);
+        assertTrue(result);
     }
 
     // Test when the list has all identical elements (should be considered sorted)
     @Test
     public void testTask5_identicalElements() {
-        List<Integer> identicalList = Arrays.asList(5, 5, 5, 5); //Create a list with identical numbers
-        boolean result = SimpleFunctions.Task5(identicalList);  //Call Task5 with the identical elements list
+        List<Integer> identicalList = Arrays.asList(5, 5, 5, 5);
+        boolean result = SimpleFunctions.Task5(identicalList);
+        assertTrue(result);
+    }//TASK 5 TESTS
+  
+    @Test void TestingTask6 () {
+        // Arrange
+        SimpleFunctions testcases = new SimpleFunctions();
+        
+        List<Integer> data = Arrays.asList(100, 200, 300);
+        List<Integer> data1 = Arrays.asList(120, 250, 305);
+        List<Integer> data2 = Arrays.asList(990, 1000, 1010);
 
-        assertTrue(result); //Check that the identical list is not sorted
+        List<Integer> expected = Arrays.asList(100, 200, 300);
+        List<Integer> expected1 = Arrays.asList(200, 300, 400);
+        List<Integer> expected2 = Arrays.asList(1000, 1000, 1100);
+        // Act
+        List<Integer> result = testcases.Task6(data);
+        List<Integer> result1 = testcases.Task6(data1);
+        List<Integer> result2 = testcases.Task6(data2);
+        // Assert
+        assertIterableEquals(expected, result);
+        assertIterableEquals(expected1, result1);
+        assertIterableEquals(expected2, result2);
+//>>>>>>> master
     }
 }
 
