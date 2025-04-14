@@ -5,6 +5,22 @@ import java.util.List;
 public class SimpleFunctions {
     // public SimpleFunctions() {}
 
+    //Task 2
+    public static List<String> Task2(List<String> lst){
+        
+        List<String> result = new ArrayList<>();
+        
+        //loop through list of elemets and remove first character
+        for (String s : lst){
+            if (s.length()> 1){
+                result.add(s.substring(1));
+                //if string has more than two characters remove the first and append to result
+                //if the input string s is one character the output will be empty thus removing from output
+            }
+
+        }return result;
+
+    }
     public static <T extends Comparable<T>> boolean Task5 (List<T> lst) {
         // A loop that will iterate through the list
         for (int i =0; i < lst.size() - 1; i++) {
