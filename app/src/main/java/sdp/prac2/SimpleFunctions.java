@@ -3,6 +3,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleFunctions {
+    public SimpleFunctions() {}
+
+    public static int task1 (int [] a, int [] b){
+    int sum = 0;
+    //created for loop to iterate through list b(indices)
+    for (int i = 0; i < b.length; i++) {
+        int index = b[i];
+
+    //check if the current item of list b is in list a
+        if (index < a.length) {
+    //sums the specific number
+        sum += a[index];
+        }
+    } 
+    //returns the sum of all elements in list a that correspond with list b
+    return sum;
+    }
     // public SimpleFunctions() {}
 
     //Task 2
