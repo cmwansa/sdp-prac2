@@ -13,7 +13,7 @@ class AppTest {
     @Test
     public void testTask5_sortedList() {
         
-        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5) //Create a sorted list;    
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5); //Create a sorted list;    
         boolean result = SimpleFunctions.Task5(sortedList); //Call Task5 with the sorted list
 
         assertTrue(result); //Check if list is sorted
