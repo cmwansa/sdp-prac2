@@ -4,12 +4,43 @@
 package sdp.prac2;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.util.*;
 
 import org.junit.jupiter.api.Test;
 
 class AppTest {
+    @Test 
+    public void testofTask2(){
+
+    //1. Arrange = creating a list
+    //Normal list
+    List<String> test1 = List.of("Chichi", "Cathy", "Sine", "Kay", "Kyle");
+    //List with only one element
+    List<String> test2 = List.of("Chichi");
+    //List thats empty
+    List<String> test3 = List.of();
+
+    //2. Act 
+    List<String> testresult = SimpleFunctions.Task2(test1);
+    List<String> testresult2 = SimpleFunctions.Task2(test2);
+    List<String> testresult3 = SimpleFunctions.Task2(test3);
+
+    //3. Assert
+    List<String> expectedans1 = List.of("Cathy", "Sine", "Kay", "Kyle");
+    List<String> expectedans2 = List.of();
+    List<String> expectedans3 = List.of();
+    
+    assertEquals(expectedans1, testresult, "The first element should not be here");
+    assertEquals(expectedans2, testresult2, "The first element should not be here, it should be empty");
+    assertEquals(expectedans3, testresult3, "It should remain empty");
+
+
+
+
+    }
     @Test void TestingTask6 () {
         // Arrange
         SimpleFunctions testcases = new SimpleFunctions();
