@@ -12,7 +12,7 @@ import java.util.*;
 import org.junit.jupiter.api.Test;
 
 class AppTest {
-    @Test 
+     @Test 
     public void testofTask2(){
 
     //1. Arrange = creating a list
@@ -36,10 +36,30 @@ class AppTest {
     assertEquals(expectedans1, testresult, "The first element should not be here");
     assertEquals(expectedans2, testresult2, "The first element should not be here, it should be empty");
     assertEquals(expectedans3, testresult3, "It should remain empty");
+    }
 
 
 
+    @Test void Test_Task3 () {
+        //SimpleFunctions testcases = new SimpleFunctions();
+        //Arrange
+        String test1 = "(())"; //true
+        String test2 = "(()())()"; //true
+        String test3 = "(("; //false
+        //Act
+        boolean return1 = SimpleFunctions.Task3(test1);
+        boolean return2 = SimpleFunctions.Task3(test2);
+        boolean return3 = SimpleFunctions.Task3(test3);
 
+        //Assert 
+
+        boolean expect1 = true;
+        boolean expect2 = true;
+        boolean expect3 = false;
+        
+        assertEquals(expect1,return1);
+        assertEquals(expect2,return2);
+        assertEquals(expect3,return3);
     }
     @Test void TestingTask6 () {
         // Arrange
