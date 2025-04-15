@@ -19,7 +19,7 @@ class AppTest {
     //Normal list
     List<String> test1 = List.of("Chichi", "Cathy", "Sine", "Kay", "Kyle");
     //List with only one element
-    List<String> test2 = List.of("Chichi");
+    List<String> test2 = List.of("C");
     //List thats empty
     List<String> test3 = List.of();
 
@@ -29,14 +29,13 @@ class AppTest {
     List<String> testresult3 = SimpleFunctions.Task2(test3);
 
     //3. Assert
-    List<String> expectedans1 = List.of("Cathy", "Sine", "Kay", "Kyle");
+    List<String> expectedans1 = List.of("hichi","athy", "ine", "ay", "yle");
     List<String> expectedans2 = List.of();
     List<String> expectedans3 = List.of();
     
     assertEquals(expectedans1, testresult, "The first element should not be here");
     assertEquals(expectedans2, testresult2, "The first element should not be here, it should be empty");
     assertEquals(expectedans3, testresult3, "It should remain empty");
-
 
 
 
