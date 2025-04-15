@@ -3,16 +3,39 @@
  */
 package sdp.prac2;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
-
-import java.util.*;
-
 import org.junit.jupiter.api.Test;
 
 class AppTest {
-    @Test 
+    @Test
+    public void task1_tests() {
+        // Arrange
+
+        // Test Case 1
+        int[] a1 = {10, 20, 30, 40};
+        int[] b1 = {0, 2}; // Valid indices only
+        int expected1 = 40; // a[0] + a[2] = 10 + 30
+
+        // Test Case 2
+        int[] a2 = {5, 15, 25};
+        int[] b2 = {1, 3}; // 3 is out of bounds
+        int expected2 = 15; // Only a[1] is valid
+
+        // Act: 
+        int result1 = SimpleFunctions.task1(a1, b1);
+        int result2 = SimpleFunctions.task1(a2, b2);
+
+        // Assert
+        assertEquals(expected1, result1);
+        assertEquals(expected2, result2);
+    }
+
+    
+     @Test 
     public void testofTask2(){
 
     //1. Arrange = creating a list
@@ -36,9 +59,30 @@ class AppTest {
     assertEquals(expectedans1, testresult, "The first element should not be here");
     assertEquals(expectedans2, testresult2, "The first element should not be here, it should be empty");
     assertEquals(expectedans3, testresult3, "It should remain empty");
+    }
 
 
 
+    @Test void Test_Task3 () {
+        //SimpleFunctions testcases = new SimpleFunctions();
+        //Arrange
+        String test1 = "(())"; //true
+        String test2 = "(()())()"; //true
+        String test3 = "(("; //false
+        //Act
+        boolean return1 = SimpleFunctions.Task3(test1);
+        boolean return2 = SimpleFunctions.Task3(test2);
+        boolean return3 = SimpleFunctions.Task3(test3);
+
+        //Assert 
+
+        boolean expect1 = true;
+        boolean expect2 = true;
+        boolean expect3 = false;
+        
+        assertEquals(expect1,return1);
+        assertEquals(expect2,return2);
+        assertEquals(expect3,return3);
     }
     @Test void TestingTask6 () {
         // Arrange
@@ -60,4 +104,6 @@ class AppTest {
         assertIterableEquals(expected1, result1);
         assertIterableEquals(expected2, result2);
     }
+ 
 }
+
