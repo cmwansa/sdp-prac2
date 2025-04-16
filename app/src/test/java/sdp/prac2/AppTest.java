@@ -116,8 +116,6 @@ public class AppTest {
         assertEquals(expected3,result3);
       }
 
-    
-    @Test void TestingTask6 () {
     @Test 
     public void TestingTask6 () {
         // Arrange
