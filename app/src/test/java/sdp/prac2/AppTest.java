@@ -7,7 +7,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
 public class AppTest {
@@ -115,6 +119,30 @@ public class AppTest {
         assertNull(result2);
         assertEquals(expected3,result3);
       }
+
+        @Test
+    public void testTask5_SortedListReturnsTrue() {
+        // Arrange
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+
+        // Act
+        boolean result = SimpleFunctions.Task5(sortedList);
+
+        // Assert
+        assertTrue(result);
+    }
+
+    @Test
+    public void testTask5_UnsortedListReturnsFalse() {
+        // Arrange
+        List<Integer> unsortedList = Arrays.asList(5, 1, 3, 2);
+
+        // Act
+        boolean result = SimpleFunctions.Task5(unsortedList);
+
+        // Assert
+        assertFalse(result);
+    }
 
     
     @Test void TestingTask6 () {
