@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'sdp-prac2'
-include('app')
+include ':app'

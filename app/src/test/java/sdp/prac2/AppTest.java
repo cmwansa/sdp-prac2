@@ -10,7 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import org.junit.jupiter.api.Test;
 
-class AppTest {
+public class AppTest {
+
     @Test
     public void task1_tests() {
         // Arrange
@@ -35,7 +36,7 @@ class AppTest {
     }
 
     
-     @Test 
+    @Test 
     public void testofTask2(){
 
     //1. Arrange = creating a list
@@ -63,7 +64,8 @@ class AppTest {
 
 
 
-    @Test void Test_Task3 () {
+    @Test 
+    public void Test_Task3 () {
         //SimpleFunctions testcases = new SimpleFunctions();
         //Arrange
         String test1 = "(())"; //true
@@ -84,7 +86,8 @@ class AppTest {
         assertEquals(expect2,return2);
         assertEquals(expect3,return3);
     }
-    @Test void TestingTask6 () {
+    @Test 
+    public void TestingTask6 () {
         // Arrange
         SimpleFunctions testcases = new SimpleFunctions();
         
