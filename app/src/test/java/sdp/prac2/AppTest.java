@@ -84,6 +84,37 @@ class AppTest {
         assertEquals(expect2,return2);
         assertEquals(expect3,return3);
     }
+
+        @Test
+    public void task4Test(){
+        //ARRANGE
+        //Test Case 1
+        List<Integer> a1 = Arrays.asList(2, 2, 2, 2, 2);
+        List<Integer> b1 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> expected1 = Arrays.asList(10, 8, 6, 4, 2);
+    
+        //Test Case 2
+        List<Integer> a2 = Arrays.asList(2, 2, 2);
+        List<Integer> b2 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> expected2 = null;
+    
+        //Test Case 3
+        List<Integer> a3 = Arrays.asList(1, 2, 3, 4);
+        List<Integer> b3 = Arrays.asList(5, 5, 5, 5);
+        List<Integer> expected3 = Arrays.asList(20, 15, 10, 5);
+    
+        //ACT
+        List<Integer> result1 = SimpleFunctions.Task4(a1, b1);
+        List<Integer> result2 = SimpleFunctions.Task4(a2, b2);
+        List<Integer> result3 = SimpleFunctions.Task4(a3, b3);
+    
+        //ASSERT
+        assertEquals(expected1,result1);
+        assertNull(result2);
+        assertEquals(expected3,result3);
+      }
+
+    
     @Test void TestingTask6 () {
         // Arrange
         SimpleFunctions testcases = new SimpleFunctions();
