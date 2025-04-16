@@ -120,29 +120,29 @@ public class AppTest {
         assertEquals(expected3,result3);
       }
 
-        @Test
-    public void testTask5_SortedListReturnsTrue() {
-        // Arrange
-        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
-
-        // Act
-        boolean result = SimpleFunctions.Task5(sortedList);
-
-        // Assert
-        assertTrue(result);
-    }
-
-    @Test
-    public void testTask5_UnsortedListReturnsFalse() {
-        // Arrange
-        List<Integer> unsortedList = Arrays.asList(5, 1, 3, 2);
-
-        // Act
-        boolean result = SimpleFunctions.Task5(unsortedList);
-
-        // Assert
-        assertFalse(result);
-    }
+      @Test
+      public void testTask5_ReturnsTrueForSortedList() {
+          // Arrange
+          List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+  
+          // Act
+          boolean result = SimpleFunctions.Task5(sortedList);
+  
+          // Assert
+          assertTrue(result);
+      }
+  
+      @Test
+      public void testTask5_ReturnsFalseForUnsortedList() {
+          // Arrange
+          List<Integer> unsortedList = Arrays.asList(5, 3, 2, 4, 1);
+  
+          // Act
+          boolean result = SimpleFunctions.Task5(unsortedList);
+  
+          // Assert
+          assertFalse(result);
+      }
 
     
     @Test void TestingTask6 () {
@@ -168,5 +168,6 @@ public class AppTest {
         assertIterableEquals(expected2, result2);
     }
  
+    }
 }
 
