@@ -145,7 +145,7 @@ public class AppTest {
       }
 
     
-    @Test void TestingTask6 () {
+    
     @Test 
     public void TestingTask6 () {
         // Arrange
@@ -166,8 +166,6 @@ public class AppTest {
         assertIterableEquals(expected, result);
         assertIterableEquals(expected1, result1);
         assertIterableEquals(expected2, result2);
-    }
- 
     }
 }
 
