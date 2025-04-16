@@ -3,6 +3,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleFunctions {
+    public SimpleFunctions() {}
+
+    public static int task1 (int [] a, int [] b){
+    int sum = 0;
+    //created for loop to iterate through list b(indices)
+    for (int i = 0; i < b.length; i++) {
+        int index = b[i];
+
+    //check if the current item of list b is in list a
+        if (index < a.length) {
+    //sums the specific number
+        sum += a[index];
+        }
+    } 
+    //returns the sum of all elements in list a that correspond with list b
+    return sum;
+    }
     // public SimpleFunctions() {}
 
     //Task 2
@@ -47,6 +64,23 @@ public class SimpleFunctions {
         return (check == true && count == 0);   //indicates that a string has brackets AND that they are matched
     }
 
+    //Task 4
+    public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
+        if (a.size() != b.size()) { // Check if lists are the same size 
+            return null;    //If not, return null
+        }
+
+
+        List<Integer> result = new ArrayList<>(); // List to store the result of the multiplications
+
+        for (int i = 0; i < a.size(); i++) {
+            int product = a.get(i) * b.get(b.size() - 1 - i); // Multiply a[i] with the element from the end of b
+            result.add(product);    // Add product to the result list
+        }
+
+        return result;
+    }
+    
 
     public static <T extends Comparable<T>> boolean Task5 (List<T> lst) {
         // A loop that will iterate through the list

@@ -3,8 +3,171 @@
  */
 package sdp.prac2;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Arrays;
+import java.util.List;
 
-class AppTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
+public class AppTest {
+
+    @Test
+    public void task1_tests() {
+        // Arrange
+
+        // Test Case 1
+        int[] a1 = {10, 20, 30, 40};
+        int[] b1 = {0, 2}; // Valid indices only
+        int expected1 = 40; // a[0] + a[2] = 10 + 30
+
+        // Test Case 2
+        int[] a2 = {5, 15, 25};
+        int[] b2 = {1, 3}; // 3 is out of bounds
+        int expected2 = 15; // Only a[1] is valid
+
+        // Act: 
+        int result1 = SimpleFunctions.task1(a1, b1);
+        int result2 = SimpleFunctions.task1(a2, b2);
+
+        // Assert
+        assertEquals(expected1, result1);
+        assertEquals(expected2, result2);
+    }
+
+    
+    @Test 
+    public void testofTask2(){
+
+    //1. Arrange = creating a list
+    //Normal list
+    List<String> test1 = List.of("Chichi", "Cathy", "Sine", "Kay", "Kyle");
+    //List with only one element
+    List<String> test2 = List.of("C");
+    //List thats empty
+    List<String> test3 = List.of();
+
+    //2. Act 
+    List<String> testresult = SimpleFunctions.Task2(test1);
+    List<String> testresult2 = SimpleFunctions.Task2(test2);
+    List<String> testresult3 = SimpleFunctions.Task2(test3);
+
+    //3. Assert
+    List<String> expectedans1 = List.of("hichi","athy", "ine", "ay", "yle");
+    List<String> expectedans2 = List.of();
+    List<String> expectedans3 = List.of();
+    
+    assertEquals(expectedans1, testresult, "The first element should not be here");
+    assertEquals(expectedans2, testresult2, "The first element should not be here, it should be empty");
+    assertEquals(expectedans3, testresult3, "It should remain empty");
+    }
+
+
+
+    @Test 
+    public void Test_Task3 () {
+        //SimpleFunctions testcases = new SimpleFunctions();
+        //Arrange
+        String test1 = "(())"; //true
+        String test2 = "(()())()"; //true
+        String test3 = "(("; //false
+        //Act
+        boolean return1 = SimpleFunctions.Task3(test1);
+        boolean return2 = SimpleFunctions.Task3(test2);
+        boolean return3 = SimpleFunctions.Task3(test3);
+
+        //Assert 
+
+        boolean expect1 = true;
+        boolean expect2 = true;
+        boolean expect3 = false;
+        
+        assertEquals(expect1,return1);
+        assertEquals(expect2,return2);
+        assertEquals(expect3,return3);
+    }
+
+        @Test
+    public void task4Test(){
+        //ARRANGE
+        //Test Case 1
+        List<Integer> a1 = Arrays.asList(2, 2, 2, 2, 2);
+        List<Integer> b1 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> expected1 = Arrays.asList(10, 8, 6, 4, 2);
+    
+        //Test Case 2
+        List<Integer> a2 = Arrays.asList(2, 2, 2);
+        List<Integer> b2 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> expected2 = null;
+    
+        //Test Case 3
+        List<Integer> a3 = Arrays.asList(1, 2, 3, 4);
+        List<Integer> b3 = Arrays.asList(5, 5, 5, 5);
+        List<Integer> expected3 = Arrays.asList(5,10,15,20);
+    
+        //ACT
+        List<Integer> result1 = SimpleFunctions.Task4(a1, b1);
+        List<Integer> result2 = SimpleFunctions.Task4(a2, b2);
+        List<Integer> result3 = SimpleFunctions.Task4(a3, b3);
+    
+        //ASSERT
+        assertEquals(expected1,result1);
+        assertNull(result2);
+        assertEquals(expected3,result3);
+      }
+
+      @Test
+      public void testTask5_ReturnsTrueForSortedList() {
+          // Arrange
+          List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+  
+          // Act
+          boolean result = SimpleFunctions.Task5(sortedList);
+  
+          // Assert
+          assertTrue(result);
+      }
+  
+      @Test
+      public void testTask5_ReturnsFalseForUnsortedList() {
+          // Arrange
+          List<Integer> unsortedList = Arrays.asList(5, 3, 2, 4, 1);
+  
+          // Act
+          boolean result = SimpleFunctions.Task5(unsortedList);
+  
+          // Assert
+          assertFalse(result);
+      }
+
+    
+    @Test void TestingTask6 () {
+    @Test 
+    public void TestingTask6 () {
+        // Arrange
+        SimpleFunctions testcases = new SimpleFunctions();
+        
+        List<Integer> data = Arrays.asList(100, 200, 300);
+        List<Integer> data1 = Arrays.asList(120, 250, 305);
+        List<Integer> data2 = Arrays.asList(990, 1000, 1010);
+
+        List<Integer> expected = Arrays.asList(100, 200, 300);
+        List<Integer> expected1 = Arrays.asList(200, 300, 400);
+        List<Integer> expected2 = Arrays.asList(1000, 1000, 1100);
+        // Act
+        List<Integer> result = testcases.Task6(data);
+        List<Integer> result1 = testcases.Task6(data1);
+        List<Integer> result2 = testcases.Task6(data2);
+        // Assert
+        assertIterableEquals(expected, result);
+        assertIterableEquals(expected1, result1);
+        assertIterableEquals(expected2, result2);
+    }
+ 
+    }
 }
+
