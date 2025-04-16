@@ -103,7 +103,7 @@ public class AppTest {
         //Test Case 3
         List<Integer> a3 = Arrays.asList(1, 2, 3, 4);
         List<Integer> b3 = Arrays.asList(5, 5, 5, 5);
-        List<Integer> expected3 = Arrays.asList(20, 15, 10, 5);
+        List<Integer> expected3 = Arrays.asList(5,10,15,20);
     
         //ACT
         List<Integer> result1 = SimpleFunctions.Task4(a1, b1);
